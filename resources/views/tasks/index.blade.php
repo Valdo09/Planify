@@ -15,8 +15,9 @@
             <table class="table">
                 <tr>
                     <th>N°</th>
-                    <th>Tâches</th>
                     <th>Libelle</th>
+                    <th>Description</th>
+                    <th>Date de fin</th>
                     <th>Actions</th>
                 </tr>
 
@@ -27,6 +28,7 @@
                         <td>{{ $loop->iteration }}</td>
                         <td class="">{{$task->title}}</td>
                         <td class="">{{$task->description}}</td>
+                        <td>{{ \Carbon\Carbon::parse($task->end_date)->locale('fr_FR')->isoFormat('LL')}}</td>
                         <td>
                             <div class="d-flex">
                                 <form action="{{route('change.status', $task->id)}}" method="POST">
