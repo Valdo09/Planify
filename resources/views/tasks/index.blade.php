@@ -15,7 +15,7 @@
                         <thead>
                             <tr>
                                 <th class="three wide">Tâches</th>
-                                <th class="ten wide">&nbsp;</th>
+                                <th class="seven wide">&nbsp;</th>
                                 <th class="three wide">
                                     <button type="button" class="ui icon button">
                                        
@@ -23,6 +23,14 @@
                                       
                                     </button>
                                    
+                                </th>
+                                <th class="thre widee">
+                                    <button type="button" class="ui icon button">
+                                        <a href="{{route('export-tasks')}}">
+                                        <i class="download icon"></i>
+                                        </a>
+                                    </button>
+
                                 </th>
                                 
                                
