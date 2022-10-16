@@ -30,25 +30,29 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                   CAR RENT
+                 PLANIFY
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                   
+
                     <ul class="navbar-nav ms-auto">
                         @auth
-                            {{auth()->user()->identifiant}}
-                            <div class="text-end ">
-                            <a href="{{ route('logout.perform') }}" class="btn btn-outline-danger me-2">Déconnexion</a>
-                            </div>
+
+                            <li class="nav-item">
+                                <a class="nav-link active fs-4 fw-bold me-3" aria-current="page" href="javascript:void(0)">  {{auth()->user()->identifiant}}</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{ route('logout.perform') }}" class="nav-link btn btn-danger me-2 text-white">Déconnexion</a>
+                            </li>
                         @endauth
-                
+
                         @guest
                             <div class="text-end">
                             <a href="{{ route('login.perform') }}" class="btn btn-outline-success me-2">Connexion</a>

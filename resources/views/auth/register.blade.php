@@ -8,7 +8,7 @@
         </div>
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header">{{ __('Inscription') }}</div>
+                <div class="card-header bg-success  text-white  ">{{ __('Inscrivez-vous ici') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register.perform') }}">
@@ -27,8 +27,8 @@
                                 @enderror
                             </div>
                         </div>
-                        
-                       
+
+
 
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
@@ -43,7 +43,7 @@
                                 @enderror
                             </div>
                         </div>
-                        
+
 
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Mot de passe') }}</label>
@@ -83,7 +83,7 @@
                                     </label>
                                   </div>
                             </div>
-                           
+
                         </div>
                         <div class="row mb-3">
                             <label for="birthDate" class="col-md-4 col-form-label text-md-end">{{__('Date de naissance')}}</label>
@@ -94,7 +94,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary w-100">
                                     {{ __('S\'inscrire') }}
                                 </button>
                             </div>

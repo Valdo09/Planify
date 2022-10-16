@@ -8,9 +8,9 @@
     </div>
 @endif
 
+
 @if ($message=Session::get('success'))
-<div class="alert alert-success alert-dismissible">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  <strong>{{$message}}</strong>
+<div class="alert alert-success my-3" role="alert">
+    <strong>{{$message}}</strong>
 </div>
 @endif

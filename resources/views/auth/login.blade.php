@@ -1,21 +1,21 @@
 @extends('layouts.auth-master')
 
 @section('content')
-<div class="">
+<div class="container">
     <div class="row mt-5">
         <div class="col-md-6">
-            
+
             <img src="{{asset('images/undraw_secure_login_pdn4.png')}}" class="w-100 h-100" alt="">
         </div>
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header">{{ __('Connexion') }}</div>
+                <div class="card-header bg-success text-white">{{ __('Connexion') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login.perform') }}">
                         @csrf
 
-                        <div class="row mb-3">
+                        <div class="row mb-4">
                             <label for="identifiant" class="col-md-4 col-form-label text-md-end">{{ __('Adresse email') }}</label>
 
                             <div class="col-md-6">
@@ -29,7 +29,7 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
+                        <div class="row mb-4">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Mot de passe') }}</label>
 
                             <div class="col-md-6">
@@ -43,7 +43,7 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
+                        <div class="row mb-4">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
@@ -57,7 +57,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-success">
+                                <button type="submit" class="btn btn-primary w-100">
                                     {{ __('Connexion') }}
                                 </button>
 
