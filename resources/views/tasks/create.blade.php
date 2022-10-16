@@ -20,7 +20,7 @@
                             <label for="description " class="form-label">Description</label>
 
                             <div class="">
-                                <textarea class="form-control" id="description" rows="3" name="description"></textarea>
+                                <textarea class="form-control" id="description" rows="15" name="description"></textarea>
                             </div>
                         </div>
                         <div class="row mb-3">

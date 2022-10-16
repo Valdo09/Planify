@@ -16,12 +16,12 @@ use App\Http\Controllers\TaskController;
 */
 
 Route::group(['namespace' => 'App\Http\Controllers'], function()
-{   
+{
     /**
      * Home Routes
      */
     Route::get('/', 'HomeController@index')->name('home.index');
-    
+
 
     Route::group(['middleware' => ['guest']], function() {
         /**
@@ -29,7 +29,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
          */
         Route::get('/register','RegisterController@show')->name('register.show');
         Route::post('/register','RegisterController@register')->name('register.perform');
-    
+
 
         /**
          * Login Routes
@@ -45,9 +45,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
          */
         Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
         Route::resource('/tasks',TaskController::class);
-        Route::patch('/tasks/{task}', 'TaskController@changeStatus')->name('change.status');
+        Route::patch('/tasks/{task}/changestatus', 'TaskController@changeStatus')->name('change.status');
         Route::get('/export-tasks',[TaskController::class,
         'exportTasks'])->name('export-tasks');
-        
+
     });
 });
