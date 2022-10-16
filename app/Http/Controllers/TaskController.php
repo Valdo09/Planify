@@ -89,6 +89,18 @@ class TaskController extends Controller
         return redirect()->route('tasks.index')->with("success","Tâche modifiée avec succès");
 
     }
+    public function changeStatus(Task $task)
+    {
+        if($task->status=="En cours")
+        {
+            $task->status="Terminee";
+        }
+        else {
+            $task->status="En cours";
+        }
+        $task->save();
+        return redirect()->route('tasks.index');
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -103,18 +115,7 @@ class TaskController extends Controller
         return redirect()->route('tasks.index')->with("success","Tâche supprimée avec succès");
 
     }
-    public function changeStatus(Request $request, Task $task)
-    {
-        if($task->status=="En cours")
-        {
-            $task->status="Terminee";
-        }
-        else {
-            $task->status="En cours";
-        }
-        $task->save();
-        return redirect()->route('tasks.index');
-    }
+    
     public function exportTasks(Request $request){
         return Excel::download(new ExportTask, 'liste-des-taches.xlsx');
     }

@@ -20,7 +20,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     /**
      * Home Routes
      */
-    Route::get('/', 'HomeController@index')->name('home.index');
+    
+    Route::redirect('/','/login');
 
 
     Route::group(['middleware' => ['guest']], function() {
