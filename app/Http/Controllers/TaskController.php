@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Task;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ExportTask;
 
 class TaskController extends Controller
 {
@@ -113,4 +115,8 @@ class TaskController extends Controller
         $task->save();
         return redirect()->route('tasks.index');
     }
+    public function exportTasks(Request $request){
+        return Excel::download(new ExportTask, 'liste-des-taches.xlsx');
+    }
+    
 }
